@@ -16,20 +16,20 @@ button {
     border-radius: 10px;
     border: none; 
     background-color: #eeeeee;
-    box-shadow: 0 9px #bababa;
+    box-shadow: 0 0.5625em #bababa;
 }
 
 button p {
     text-align: center;
 }
 
-.button:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(2px);
+button:active {
+    box-shadow: 0 0.3125em #666;
+    transform: translateY(0.125em);
   }
 
 #frame {
-    margin: 25px 0 25px 0; 
+    margin: 1.5625em 0; 
     width: 50%; 
     border-radius: 25px;
     background-color: #e71d36; 
@@ -55,7 +55,7 @@ button p {
 
 #container {
     display: grid; 
-    gap: 0.5px;    
+    gap: 0.03125em;    
 }
 
 #bottom {
@@ -76,6 +76,7 @@ button p {
     padding-bottom: 100%;
     background-color: #ffffff;
 }
+
 /* .cell-style::before {
     content: "";
     padding-bottom: 100%;
