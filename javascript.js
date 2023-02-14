@@ -17,3 +17,16 @@ function createGrid() {
 }
 createGridCell();
 createGrid();
+
+// create a function that colors the cell on click and hover
+function addColor() {
+    // DOM style.backgroundColor 
+    this.style.cursor = "pointer";
+    this.style.backgroundColor = "black";
+}  
+
+// Event listener that fires on mouseenter
+const gridItems = document.querySelectorAll(".cell");
+gridItems.forEach(function(item){
+    item.addEventListener("mouseenter", addColor);
+})
