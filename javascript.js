@@ -2,11 +2,9 @@ const container = document.getElementById("container");
 const resetButton = document.getElementById("reset");
 const bnwButton = document.getElementById("bnw");
  
-// Part 1. create 256 div's in DOM (for 16 x 16 square grid)
-// Part 2. create the number of div's per the prompt entry 
+// Function that creates the number of div's per the user's entry 
 function createGridCell(divCountToSquare){
     const fragment = document.createDocumentFragment();
-    // for (let i = 0; i < 256; i++) {
     let doubled = divCountToSquare ** 2; 
     for (let i = 0; i < doubled; i++){
         let cell = document.createElement("div")
@@ -15,20 +13,16 @@ function createGridCell(divCountToSquare){
     }
   container.append(fragment);
 }
-// Part 1. Function that creates 16 x 16 square grid in a container
-// Part 2. Function that creates grid per the prompt entry 
+// Function that creates grid per the user's entry 
 function createGrid(cellCountPerSide) {
     // container.style.gridTemplateColumns = "repeat(16, 1fr)";
     // container.style.gridTemplateRows = "repeat(16, 1fr)";
     container.style.gridTemplateColumns = `repeat(${cellCountPerSide}, 1fr)`
     container.style.gridTemplateRows = `repeat(${cellCountPerSide}, 1fr)`
 }
-// createGridCell();
-// createGrid();
 
 // Function that colors the cell on hover
 function addColor() {
-    // DOM style.backgroundColor 
     this.style.cursor = "pointer";
     this.style.backgroundColor = "black";
 }  
@@ -37,22 +31,17 @@ function addColor() {
 function getUserInput() {
     let enteredValue = prompt("Enter an integer between 1 and 100", 1);
     if (enteredValue === null || enteredValue === "") {
-        console.log(enteredValue + " falsy"); 
         return; 
     } else if (!Number.isInteger(+enteredValue)|| isNaN(+enteredValue) || +enteredValue < 1 || +enteredValue > 100){
-        console.log(enteredValue + " also falsy");
         alert("The number has to be an integer between 1 and 100.");
         getUserInput();
         return; 
     } else if (+enteredValue >= 1 && +enteredValue <= 100){
-        console.log(enteredValue + " truthy");
         return +enteredValue; 
     } else {
         return; 
     }
 }
-
-// getUserInput();
 
 // Function that creates div's and grid cells per the user's entry
 function setUpGrid(){
@@ -62,7 +51,8 @@ function setUpGrid(){
     createGrid(userEntry);
     const gridItems = document.querySelectorAll(".cell"); 
     gridItems.forEach(function(item){
-        item.addEventListener("mouseenter", addColor);
+        // item.addEventListener("mouseenter", addColor);
+        item.addEventListener("mouseenter", addRandomColor);
     })
 }
 
@@ -75,3 +65,17 @@ function refreshCanvas(){
 // Event listener attached to reset button 
 resetButton.addEventListener("click", setUpGrid);
 
+// BONUS Feature: Random color trace 
+// Function that returns random numbers 
+function createRandomInteger(maxNumber){
+    return Math.floor(Math.random()*(maxNumber + 1));
+}
+
+// Function that randomly produces RGB colors
+function addRandomColor(){
+    let red = createRandomInteger(255);
+    let green = createRandomInteger(255);
+    let blue = createRandomInteger(255);
+    this.style.cursor = "pointer";
+    this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+}
