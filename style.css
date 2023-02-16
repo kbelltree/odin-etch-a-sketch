@@ -74,6 +74,7 @@ button:active {
 /* DOM grid cell setting */
 .cell {
     padding-bottom: 100%;
+    height: 0; 
     background-color: #ffffff;
 }
 
