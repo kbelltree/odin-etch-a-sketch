@@ -77,10 +77,3 @@ button:active {
     height: 0; 
     background-color: #ffffff;
 }
-
-/* .cell-style::before {
-    content: "";
-    padding-bottom: 100%;
-    box-sizing: border-box;
-    display: block;
-} */
