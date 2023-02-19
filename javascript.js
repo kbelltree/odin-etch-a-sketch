@@ -102,18 +102,16 @@ function activateGradation(){
     createGrid(userEntry);
 
     const gridItems = document.querySelectorAll(".cell");
-    let hexValue = ["#e6e6e6", "#cccccc", "#b3b3b3", "#999999", "#808080", "#666666", "#4d4d4d", "#333333", "#1a1a1a", "#000000"] ;
+    let hexValue = ["#ffffff", "#e6e6e6", "#cccccc", "#b3b3b3", "#999999", "#808080", "#666666", "#4d4d4d", "#333333", "#1a1a1a"] ;
     let counter = 0;
     gridItems.forEach((item) => {
         item.addEventListener("mouseenter", function(){
-            if (counter <= 10){
-                this.style.cursor = "pointer";
+            this.style.cursor = "pointer";
+            if (counter < 10){
                 this.style.backgroundColor = hexValue[counter];
                 counter++;
             } else {
-                gridItems.forEach((item) => {
-                    item.addEventListener("mouseenter", addColor);
-                });
+                this.style.backgroundColor = "#000000";
             }
         });
     });
@@ -121,4 +119,5 @@ function activateGradation(){
 
 // Event listener attached to gradation button 
 gradationButton.addEventListener("click", activateGradation);
+
 
