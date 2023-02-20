@@ -56,19 +56,24 @@ I used the following new skills while working on this project, in addition to th
    * (New) Use '%' and 'em'  
    * Revisit flexbox method
    * Style buttons with effects
-   
+
 <br>
+
+
+***
+
 
 **Tools Used**
   - UI Designing Tool by [Figma.com](https://www.figma.com)
   - HTML Color Picker
  by [atmos.uw.edu](https://a.atmos.washington.edu/~ovens/javascript/colorpicker.html)
+  - Pixel to Em Converter by [w3schools](https://www.w3schools.com/tags/ref_pxtoemconversion.asp)
 
 <br>
 
 **List of Referenced Tutorials**
 
-  -  -['GRID GARDEN' by Codepip](https://cssgridgarden.com/)
+  - ['GRID GARDEN' by Codepip](https://cssgridgarden.com/)
   
   - ['A Grid of Logos in Squares' by CSS-TRICKS](https://css-tricks.com/a-grid-of-logos-in-squares/)
 
