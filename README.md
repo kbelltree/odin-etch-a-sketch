@@ -1,5 +1,10 @@
 # odin-etch-a-sketch
 ## Project: Etch-A-Sketch / The Odin Project 
+
+<br>
+<div align="center">
+  <img src="assets/etch-a-sketch-keiko-s-2023.png" alt="etch-a-sketch-project-by-keiko-s-2023" width=70% height=70%>
+</div>
 <br>
 
 ## Summary ##
